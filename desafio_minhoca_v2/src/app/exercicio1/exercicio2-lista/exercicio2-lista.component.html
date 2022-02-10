@@ -1,0 +1,70 @@
+
+  <div class="container-fluid flex-grow-1 container-p-y">
+
+    <div class="card-body" [formGroup]="frmFormLista" >
+
+      <div class="form-row">
+
+        <div class="form-group col-md-3 col-sm-12">
+          <label class="form-label">Profundidade</label>
+          <input type="text" class="form-control" id="prof" formControlName="prof">
+          <div class="clearfix"></div>
+        </div>
+        <div class="form-group col-md-3 col-sm-12">
+          <label class="form-label">Sobe</label>
+          <input type="text" class="form-control" id="sobe" formControlName="sobe">
+          <div class="clearfix"></div>
+        </div>
+        <div class="form-group col-md-3 col-sm-12">
+          <label class="form-label">Desce</label>
+          <input type="text" class="form-control" id="desce" formControlName="desce">
+          <div class="clearfix"></div>
+        </div>
+
+        <div class="form-group col-md-12 col-sm-12 mt-4">
+          <button type="submit" class="btn btn-primary" (click)="savelista($event)">Start</button>
+        </div>
+      </div>
+
+
+
+    </div>
+
+
+
+
+
+
+  </div>
+
+    <!-- Chegou na metade -->
+    <div class="card highlight-card card-small" *ngIf="meio">
+      <svg id="rocket" xmlns="http://www.w3.org/2000/svg" width="101.678" height="101.678" viewBox="0 0 101.678 101.678">
+        <title>Rocket Ship</title>
+        <g id="Group_83" data-name="Group 83" transform="translate(-141 -696)">
+          <circle id="Ellipse_8" data-name="Ellipse 8" cx="50.839" cy="50.839" r="50.839" transform="translate(141 696)" fill="#ddd600"/>
+        </g>
+      </svg>
+      <span>Chegou na metade!</span>
+    </div>
+
+    <!-- Saiu do buraco -->
+    <div class="card highlight-card card-small" *ngIf="fim">
+      <svg id="rocket" xmlns="http://www.w3.org/2000/svg" width="101.678" height="101.678" viewBox="0 0 101.678 101.678">
+        <title>Rocket Ship</title>
+        <g id="Group_83" data-name="Group 83" transform="translate(-141 -696)">
+          <circle id="Ellipse_8" data-name="Ellipse 8" cx="50.839" cy="50.839" r="50.839" transform="translate(141 696)" fill="#04dd00"/>
+        </g>
+      </svg>
+      <span>Saiu do buraco com {{i-1}} interações!</span>
+    </div>
+    <!-- Reset -->
+    <div *ngIf="fim">
+      <button type="submit" class="btn btn-primary" (click)="back()">Reset</button>
+    </div>
+
+
+
+
+
+
